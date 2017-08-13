@@ -1,0 +1,18 @@
+<apex:page StandardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!--<apex:detail subject="{!account}" relatedList="false" inlineEdit="true"/>-->
+  <!-- End Default Content REMOVE THIS -->
+  <apex:outputPanel id="panel1">
+      <apex:form >
+      <apex:pageBlock title="page Block">
+          <apex:pageBlockSection title="page Block Section">
+              <apex:pageblockSectionItem >
+                    <apex:outputField value="{!account.AnnualRevenue}"/>
+              </apex:pageblockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+      </apex:form>
+  </apex:outputPanel>
+</apex:page>

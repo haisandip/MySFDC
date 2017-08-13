@@ -1,0 +1,12 @@
+<apex:page controller="MyPositionController" showHeader="true" standardStylesheets="true" action="{!showAllPosition}">
+    
+	<apex:pageBlock >
+        <apex:pageBlockSection collapsible="true" title="Position List">
+            <apex:pageBlockTable value="{!allPositions}" var="item">
+                <apex:column value="{!item.name}"/>
+
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

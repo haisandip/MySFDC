@@ -1,0 +1,16 @@
+<apex:page controller="MyPGBar">
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: pgbar
+  <!-- End Default Content REMOVE THIS -->
+    <apex:actionPoller action="{!processBar}" reRender="prbarid" interval="5"/>
+    <apex:outputPanel id="prbarid" >
+        completion : {!completion}
+        <div id="myProgress" style = "width: 100%;    background-color: grey">
+          <div id="myBar" style ="width: {!completion}%;    height: 30px;     background-color: green">
+          </div>
+        </div>
+    </apex:outputPanel>
+    </apex:form>
+</apex:page>

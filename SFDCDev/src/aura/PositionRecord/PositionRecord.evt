@@ -1,0 +1,7 @@
+<!--PositionRecord -->
+<aura:event type="APPLICATION" description="Event template" >
+
+    <aura:attribute name="positionid" type="String"/>
+    
+    
+</aura:event>

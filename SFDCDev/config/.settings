@@ -1,0 +1,21 @@
+{
+    "projectName": "SFDCDev",
+    "username": "hai_sandip@yahoo.com",
+    "id": "5567d250-1176-11e7-be35-27c9247de814",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://sandip75-dev-ed.my.salesforce.com",
+    "workspace": "C:\\SFDCWork",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AuraDefinitionBundle",
+        "Dashboard",
+        "DataCategoryGroup",
+        "StaticResource",
+        "Workflow"
+    ]
+}

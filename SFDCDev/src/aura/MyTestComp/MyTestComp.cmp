@@ -1,0 +1,90 @@
+<aura:component controller="MyEmployeeController">
+    <!--<ltng:require styles="{!$Resource.SLDSv2 + '/assets/styles/salesforce-lightning-design-system.css'}" />-->
+    <article class="slds-card">
+        <div class="slds-media" >
+            <div class="slds-media__figure">
+                <lightning:icon iconName="standard:account" size="small" />
+            </div>
+            <div class="slds-media__body" >
+                <p>Account</p>
+            </div>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">Show some account basic informaiton</div>
+        
+    </article>
+    <div class="slds-form-element" >
+        <label class="slds-form-element__label" for="input-unique-id">Form Element Label</label>
+        <div class="slds-form-element__icon" onmouseover="{!c.showHelp}" onmouseout="{!c.hideHelp}">
+            <lightning:icon iconName="utility:info" />
+            
+            <span class="slds-assistive-text">Help</span>
+        </div>
+        <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left slds-hide" role="tooltip" aura:id="help" style="position: absolute; top: -45px; left: 125px;">
+            <div class="slds-popover__body">Help Text to help you</div>
+        </div>
+        
+        <div class="slds-form-element__label">
+            <input type="text" id="input-unique-id" class="slds-input" placeholder="Placeholder Text"/>
+            
+        </div>
+    </div>
+    <aura:attribute name="emps" type="Employee[]"/>
+    <aura:attribute name="newemps" type="Employee[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showEditAdd" type="Boolean" default="false" />
+    <aura:attribute name="showAdd" type="Boolean" default="false" />
+    <aura:attribute name="savedOnce" type="Boolean" default="false" />
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps slds-is-selected">
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate" title="Opportunity Name">Employee Name</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate" title="Opportunity Name">Employee Age</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate" title="Opportunity Name">Employee Salary</div>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.emps}" var="emp">
+                <tr>
+                    <th scope="row" data-label="Employee Name" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee">{!emp.name}</div>
+                    </th>
+                    <th scope="row" data-label="Employee Age" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee">{!emp.age}</div>
+                    </th>
+                    <th scope="row" data-label="Employee Name" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee">{!emp.salary}</div>
+                    </th>
+                </tr>
+                
+            </aura:iteration>
+            <aura:if isTrue="{!v.showAdd}">
+                <aura:iteration items="{!v.newemps}" var="newemp" indexVar="i">
+					<tr>                    
+                	<th scope="row" data-label="Employee Name" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee"><ui:inputText class="field" value="{!newemp.name}" /></div>
+                    </th>
+                    <th scope="row" data-label="Employee Age" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee"><ui:inputText class="field" value="{!newemp.age}" /></div>
+                    </th>
+                    <th scope="row" data-label="Employee Name" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Employee"><ui:inputText class="field" value="{!newemp.salary}" /></div>
+                    </th>
+                    <input type="button" id="{!i}" value="Delete" label="{!i}" onclick="{!c.removeItem}" class="slds-button slds-button_brand" />
+                     </tr>
+             </aura:iteration>                                                     
+            </aura:if>
+        </tbody>
+    </table>
+    <lightning:button variant="brand" label="Add" 		iconName="action:description" 	onclick="{!c.addnew}"/>
+    &nbsp;&nbsp;&nbsp;
+    <lightning:button variant="brand" label="Save"  	iconName="action:description"	onclick="{!c.saveEmp}"/>
+   
+</aura:component>

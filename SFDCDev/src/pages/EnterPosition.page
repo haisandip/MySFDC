@@ -1,0 +1,21 @@
+<apex:page standardController="Position__c" extensions="MyPosController">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <Apex:PAGEmessages />
+  This is your new Page: EnterPosition
+  <!-- End Default Content REMOVE THIS -->
+  <Apex:form >
+  <Apex:pageblock title="Page Block" >
+  <Apex:pageblockSection title=" Page Block Section">
+  
+  
+  <Apex:inputField value="{!Position__c.name}"/>
+  <Apex:inputField value="{!Position__c.Max_Pay__c}"/>
+  <Apex:inputField value="{!Position__c.Min_Pay__c}" />
+  <Apex:commandButton value="Save it.." action="{!save}" />
+  </Apex:pageblockSection>
+  </Apex:pageblock>
+  
+  
+  </Apex:form>
+</apex:page>

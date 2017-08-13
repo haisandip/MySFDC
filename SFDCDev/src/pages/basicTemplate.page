@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations here it is basic template</h1>
+<apex:insert name="body"></apex:insert>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,28 @@
+<aura:component controller="MySalaryController" >
+    <ltng:require styles="{!$Resource.SLDSv2 + '/assets/styles/salesforce-lightning-design-system.css'}"/>
+    
+    <aura:attribute name="funcAreaOptions" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <article class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__body">
+            <h2>
+                <span class="slds-text-heading_small">Salary Master</span>
+            </h2>
+          </div>
+        </header>
+      </div>
+      <div class="slds-card__body"></div>
+      <footer class="slds-card__footer"></footer>
+    </article>
+
+    <lightning:select name="selectItem" label="Select Fucntional Area" required="true">
+        <option value="">choose one...</option>
+        <aura:iteration items="{!v.funcAreaOptions}" var="v">
+        	<option value="{!v.Name}">{!v.value}</option>
+        </aura:iteration>
+    </lightning:select>
+    
+    
+</aura:component>

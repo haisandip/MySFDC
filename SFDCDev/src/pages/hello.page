@@ -1,0 +1,17 @@
+<apex:page sidebar="true" showHeader="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Hello World</h1>
+  <!-- End Default Content REMOVE THIS -->
+  <apex:pageBlock title="A Page Block">
+      <apex:pageBlockSection title="A Page Block Section">
+          I'm three components deep!
+          <apex:pageBlockSectionItem >
+          My Name {! $user.firstname}
+          My Name {! $user.firstname}
+      </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="A New Section">
+            This is another section.
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>

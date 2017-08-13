@@ -1,0 +1,19 @@
+<!-- PositionDisplay -->
+<aura:component controller="MyPositionController" implements="forceCommunity:availableForAllPageTypes" >
+    <aura:attribute name="poss" type="Position__C[]" />
+    <aura:attribute name="message" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    Hello....
+    
+    <aura:registerEvent name="positiondetail" type="c:PositionRecord" />
+    <aura:iteration items="{!v.poss}" var="p" >
+        <tr>
+            <td><input type="button" id="{!p.Id}" value="Show Detail" onclick="{!c.showDetail}" /></td>
+            <Td>Id : {!p.Id}</Td>
+            <td>Name :{!p.Name} </td>
+            
+        </tr>
+    </aura:iteration>
+
+
+</aura:component>

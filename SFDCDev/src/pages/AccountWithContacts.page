@@ -1,0 +1,17 @@
+<apex:page controller="MyController">
+  <!-- Begin Default Content REMOVE THIS -->
+     <apex:outputPanel id="contactDetails">
+            <apex:repeat value="{! contactInformation}" var="contact">
+                <p>"{! contact.FirstName & ' ' & contact.LastName}"</p>
+            </apex:repeat>
+        </apex:outputPanel>
+    <apex:form >
+        <apex:dataList value="{! myaccounts}" var="acct">
+            <apex:commandLink reRender="contactDetails" action="{!accountClicked}">
+                  <apex:outputText value="{! acct.name}" />
+                  <apex:param name="id" value="{! acct.Id}" assignTo="{! selectedAccount}"/>
+            </apex:commandLink>
+        </apex:dataList>
+       
+    </apex:form>
+</apex:page>

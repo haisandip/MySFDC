@@ -1,0 +1,11 @@
+<!-- Payroll Cmp -->
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <ltng:require styles="resource/SLDSv2/assets/styles/salesforce-lightning-design-system.css"/>
+    <aura:attribute name="baseSalary" type="String" default="5000"/>
+    <aura:handler name="init" value="{!this}" action="{!c.calculate}" />
+    <ui:inputtext value="{!v.baseSalary}" label="Please enter base Salary"/>
+    <ui:outputText aura:id="grossSalaryOutput" value=""/>
+	<ui:Button label="calculate" press="{!c.calculate}"/>  
+    <aura:registerEvent name="payrollevt" type="c:PayrollEvent" />
+    <aura:handler name="payrollevt" event="c:PayrollEvent" action="{!c.eventhandlemethod}" />
+</aura:component>

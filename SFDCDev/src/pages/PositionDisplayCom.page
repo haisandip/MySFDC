@@ -1,0 +1,16 @@
+<apex:page controller="MyPositionController">
+    <apex:outputPanel >
+        hello
+        <apex:includeLightning />
+        hello1
+        <div id="posDisplay"/>
+        hello2
+        <script>
+        $Lightning.use("c:PositionDisplayApp", function()
+        {
+            $Lightning.createComponent("c:PositionDisplay",{},"posDisplay");
+        });
+        </script>
+        hello3
+    </apex:outputPanel>
+</apex:page>

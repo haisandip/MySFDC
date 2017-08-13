@@ -1,0 +1,16 @@
+<apex:page standardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <script>
+      alert("{!account.industry}");
+  </script>
+
+    <apex:pageBlock title="My Account">
+       <apex:outputLink value="http://www.sharekhan.com/welcome/default.html">share</apex:outputLink> 
+       <br/>
+       <apex:outputLink value="{! $page.hello2}">Hello 2 page</apex:outputLink> 
+       
+  </apex:pageBlock>
+  
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

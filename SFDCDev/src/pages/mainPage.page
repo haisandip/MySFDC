@@ -1,0 +1,11 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations , this is the new page</h1>
+  
+  <apex:composition template="basicTemplate">
+  <apex:define name="body">
+  Here i am subted with the basic template
+  </apex:define>
+</apex:composition>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
